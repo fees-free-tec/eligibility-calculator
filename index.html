@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Fees Free Eligibility Calculator</title>
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body  padding-left="15px">
+		<div id='main-div'>
+			<h4>Fees Free Eligibility Calculator</h4><br>
+			<div class="form-group row">
+				<label for='dateOfBirth' class="col-sm-4 col-form-label" >Date of Birth: </label>
+				<div class="col-sm-8">
+					<input type='text' class="form-control" id='dateOfBirth' placeholder="DD/MM/YYYY">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for='schoolLeaveYear' class="col-sm-4 col-form-label">School Leave Year: </label>
+				<div class="col-sm-8">
+					<input type='text' class="form-control" id='schoolLeaveYear'>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for='creditsPre2018' class="col-sm-4 col-form-label">Pre-2018 credits: </label>
+				<div class="col-sm-8">
+					<input type='text' class="form-control" id='creditsPre2018'>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for='credits2018' class="col-sm-4 col-form-label">2018 credits: </label>
+				<div class="col-sm-8">
+					<input type='text' class="form-control" id='credits2018' placeholder="Don't include if assessment is for 2018">
+				</div>
+			</div>
+			<button id='submitButton' class="btn btn-primary mb-2 inline-block" >Submit</button>
+			<p id='result' class='inline-block'>Result: </p>
+		</div>
+
+		<script src="scripts/moment-with-locales.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
