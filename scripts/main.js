@@ -36,6 +36,7 @@ var firstJan1999 = Date.parse("01 Jan 1999 00:00:00 GMT");
 function findResult(dateOfBirth, schoolLeaveYear, creditsPre2018, credits2018) {
 
   dateOfBirth = Date.parse(dateOfBirth);
+  schoolLeaveYear = String(schoolLeaveYear);
 
   if (dateOfBirth < firstJan1998 && creditsPre2018 > 60.1) {
   	result = "Ineligible";
@@ -45,16 +46,18 @@ function findResult(dateOfBirth, schoolLeaveYear, creditsPre2018, credits2018) {
   	result = "Ineligible";
   } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear !== "2017" && schoolLeaveYear !== "2018" && schoolLeaveYear !== "2019" && creditsPre2018 <= 60.1) {
   	result = "Eligible";
-  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear == "2017") {
+  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear === "2017") {
   	result = "Eligible";
-  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear == "2018" && credits2018 > 60.1) {
+  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear === "2018" && credits2018 > 60.1) {
   	result = "Ineligible";
-  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear == "2018" && credits2018 <= 60.1) {
+  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear === "2018" && credits2018 <= 60.1) {
   	result = "Eligible";
-  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear == "2019" && credits2018 > 60.1) {
+  } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear === "2019" && credits2018 > 60.1) {
   	result = "Ineligible";
   } else if (dateOfBirth >= firstJan1998 && dateOfBirth < firstJan1999 && schoolLeaveYear == "2019" && credits2018 <= 60.1) {
-  	result = "Eligible";
+    result = "Eligible";
+  } else if (dateOfBirth >= firstJan1999 && schoolLeaveYear === "2017" || schoolLeaveYear === "2018" || schoolLeaveYear === "2019") {
+    result = "Eligible";
   } else if (dateOfBirth >= firstJan1999 && (creditsPre2018 + credits2018) > 60.1) {
   	result = "Ineligible";
   } else if (dateOfBirth >= firstJan1999 && (creditsPre2018 + credits2018) <= 60.1) {
